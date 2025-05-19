@@ -1,0 +1,48 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.cart {
+  width: 100px;
+  height: 200px;
+  background-color: red;
+}
+.cart-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.cart-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.cart-price {
+  color: green;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.btn-cart {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
