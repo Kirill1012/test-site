@@ -1,5 +1,5 @@
 
-import Product from "../../Products/Product.js"
+import Product from "../Products/Product.js"
 
 const products = [
     new Product({

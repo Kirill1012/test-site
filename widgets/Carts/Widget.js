@@ -8,20 +8,25 @@ class CartsWidget {
   }
 
   _crete (data) {
-    const $fragment = document.createDocumentFragment()
+    const $container = document.createElement("div")
+    $container.className = "carts-container"
 
       data.forEach((item) => {
-        $fragment.appendChild(
+        $container.appendChild(
           new Cart({
-            title: item,
+            id: item.id,
+            title: item.title,
+            image: item.image,
+            price: item.price,
+            
             onClick: () => {
-              console.log("click btn", item)
+              console.log("click btn", item.title)
             },
           }).render()
         )
       })
 
-    this.$component = $fragment
+    this.$component = $container
   }
 
   render = () => {

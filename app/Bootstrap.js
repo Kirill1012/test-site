@@ -1,4 +1,7 @@
+import products from "../Description/description"
 import Carts from "../widgets/Carts"
+import Header from "../components/Header"
+import Sidebar from "../components/Sidebar"
 
 class Bootstrap {
   _getRoot = () => {
@@ -13,9 +16,31 @@ class Bootstrap {
 
   init = () => {
     try {
-      const data = ["car-1", "cart-2", "cart-3", "cart-4"]
+      const $root = this._getRoot()
 
-      this._getRoot().appendChild(new Carts({ data }).render())
+      const header = new Header().render()
+      const sidebar = new Sidebar({
+        title: "КАТЕГОРИИ ТОВАРОВ",
+        items: [
+          {text: "Телефоны"},
+          {text: "Планшеты"},
+          {text: "Мониторы"},
+          {text: "Смарт часы"},
+          {text: "Игровые наушники"},
+          {text: "Игровые мыши"}
+        ]
+      }).render()
+      const carts = new Carts({ data: products }).render()
+
+      const $layout = document.createElement("div")
+      $layout.className = "layout"
+
+      $layout.appendChild(sidebar)
+      $layout.appendChild(carts)
+
+       $root.appendChild(header)
+       $root.appendChild($layout)
+
     } catch(error) {
       console.error(error)
     }
